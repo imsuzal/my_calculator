@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>abcd</title>
+	 <script type="text/javascript" >
+ function getvalue()
+ {
+    	 var first =document.getElementById("date1").value;
+	 first =new Date(first.split('-')[0],first.split('-')[1],first.split('-')[2]);
+	 var day1=first[0];
+	 var month1=first.getMonth();
+	 var year1=first.getFullYear();
+
+
+	 var second =document.getElementById("date2").value;
+	 second =new Date(second.split('-')[0],second.split('-')[1],second.split('-')[2]);
+	 
+	 var day2=second[0];
+	 var month2=second.getMonth();
+	 var year2=second.getFullYear();
+	 return month2;
+}
+</script>
+</head>
+<body>
+<form name="calc">
+
+<input type="date" id="date1"><br>
+<input type="date" id="date2"><br>
+<input type="button" id="btn" onclick="calc.display.value=getvalue()"><br>
+<input type="text" id="txt" name="display">
+</form>
+
+</body>
+</html>

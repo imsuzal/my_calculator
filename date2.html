@@ -1,0 +1,386 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+     <title>calculator</title>
+	<link rel="stylesheet" href="css/calc.css">
+ <script type="text/javascript" >
+ function test()
+ {
+ 	 var first =document.getElementById("date1").value;
+	 first =new Date(first.split('-')[0],first.split('-')[1],first.split('-')[2]);
+	 var day1=first.getDate();
+	 var month1=first.getMonth();
+	 var year1=first.getFullYear();
+
+
+	 var second =document.getElementById("date2").value;
+	 second =new Date(second.split('-')[0],second.split('-')[1],second.split('-')[2]);
+
+	 var day2=second.getDate();
+	 var month2=second.getMonth();
+	 var year2=second.getFullYear();
+
+
+	 var timediff =Math.abs(first.getTime() - second.getTime());
+	 var diffdays=Math.ceil((timediff/(1000*3600*24)));
+
+
+
+	 if(month1===12)
+	 {
+	      var year=Math.round(Math.abs(diffdays/365));
+          var month=Math.round(Math.abs((diffdays%365)/31));
+	      var date=Math.round(Math.abs((diffdays%365)%31));
+	 }
+	 else
+	 {
+	  var date =Math.abs(first.getDate() - second.getDate());
+	  var month =Math.abs(month1 - month2);
+      var year= Math.abs(year1 - year2);
+	  }
+
+
+
+
+
+
+	 if(year===0 && month===0 && date===0)
+	 {
+	  	return("same dates");
+
+	 }
+	else if(year===0)
+	 {
+	 	 if(month>1)
+		 {
+		 	 if(date>1)
+			 {
+			 	 return(month+" months "+date+" days");
+			 }
+			 else if(date===1)
+			 {
+
+			 return(month+" months "+date+" day");
+			 }
+			 else if(date===0)
+			 {
+			 	 return(month+" months");
+			 }
+
+		 }
+		else if (month===1)
+		 {
+		    if(date===1)
+			{
+		 	 return(month+" month "+date+" day");
+			 }
+			 else if(date>1)
+			 {
+			 return(month+" month "+date+" days");
+			 }
+			 else
+			 {
+			 	 return(month+" month");
+			 }
+		 }
+		else if(month===0)
+		{
+			 if(date===1)
+			{
+		 	 return(date+" day");
+			 }
+			 else if(date>1)
+			 {
+			 return(date+" days");
+			 }
+			 else
+			 {
+			 	 return("Same Dates");
+			 }
+		}
+		else if(date===1)
+		{
+			 if(month===1)
+			{
+		 	 return(month+" month "+date+" day");
+			 }
+			 else if(month>1)
+			 {
+			 return(month+" months "+date+" day");
+			 }
+			 else
+			 {
+			 	 return(date+" day");
+			 }
+		}
+		else if(date===0)
+		{
+			 if(month===1)
+			{
+		 	 return(month+" month ");
+			 }
+			 else if(month>1)
+			 {
+			 return(month+" months ");
+			 }
+			 else
+			 {
+			 	 return(" Same Dates");
+			 }
+		}
+		else if(date>1)
+		{
+			 if(month===1)
+			{
+		 	 return(month+" month "+date+" days");
+			 }
+			 else if(month>1)
+			 {
+			 return(month+" months "+date+" days");
+			 }
+			 else
+			 {
+			 	 return(date+" days");
+			 }
+		}
+	 }
+
+
+	else  if(month===0)
+	 {
+	 	 if(year>1)
+		 {
+		 	 if(date>1)
+			 {
+			 	 return(year+" years "+date+" days");
+			 }
+			 else if(date===1)
+			 {
+
+			 return(year+" years "+date+" day");
+			 }
+			 else{
+			 	 return(year+" years");
+			 }
+
+		 }
+		else if (year===1)
+		 {
+		    if(date===1)
+			{
+		 	 return(year+" year "+date+" day");
+			 }
+			 else if(date>1)
+			 {
+			 return(year+" year "+date+" days");
+			 }
+			 else
+			 {
+			 	 return(year+" year");
+			 }
+		 }
+		else if(year===0)
+		{
+			 if(date===1)
+			{
+		 	 return(date+" day");
+			 }
+			 else if(date>1)
+			 {
+			 return(date+" days");
+			 }
+			 else
+			 {
+			 	 return("Same Dates");
+			 }
+		}
+		else if(date===1)
+		{
+			 if(year===1)
+			{
+		 	 return(year+" year "+date+" day");
+			 }
+			 else if(year>1)
+			 {
+			 return(year+" years "+date+" day");
+			 }
+			 else
+			 {
+			 	 return(date+" day");
+			 }
+		}
+		else if(date===0)
+		{
+			 if(year===1)
+			{
+		 	 return(year+" year ");
+			 }
+			 else if(year>1)
+			 {
+			 return(year+" years ");
+			 }
+			 else
+			 {
+			 	 return(" Same Dates");
+			 }
+		}
+		else if(date>1)
+		{
+			 if(year===1)
+			{
+		 	 return(year+" year "+date+" days");
+			 }
+			 else if(year>1)
+			 {
+			 return(year+" years "+date+" days");
+			 }
+			 else
+			 {
+			 	 return(date+" days");
+			 }
+		}
+	 }
+
+	 else  if(date===0)
+	 {
+	 	 if(year>1)
+		 {
+		 	 if(month>1)
+			 {
+			 	 return(year+" years "+month+" months");
+			 }
+			 else if(month===1)
+			 {
+
+			 return(year+" years "+month+" months");
+			 }
+			 else{
+			 	 return(year+" years");
+			 }
+
+		 }
+		else if (year===1)
+		 {
+		    if(month===1)
+			{
+		 	 return(year+" year "+month+" month");
+			 }
+			 else if(month>1)
+			 {
+			 return(year+" year "+month+" months");
+			 }
+			 else
+			 {
+			 	 return(year+" year");
+			 }
+		 }
+		else if(year===0)
+		{
+			 if(month===1)
+			{
+		 	 return(month+" month");
+			 }
+			 else if(month>1)
+			 {
+			 return(month+" months");
+			 }
+			 else
+			 {
+			 	 return("Same Dates");
+			 }
+		}
+		else if(month===1)
+		{
+			 if(year===1)
+			{
+		 	 return(year+" year "+month+" month");
+			 }
+			 else if(year>1)
+			 {
+			 return(year+" years "+month+" month");
+			 }
+			 else
+			 {
+			 	 return(month+" month");
+			 }
+		}
+		else if(month===0)
+		{
+			 if(year===1)
+			{
+		 	 return(year+" year ");
+			 }
+			 else if(year>1)
+			 {
+			 return(year+" years ");
+			 }
+			 else
+			 {
+			 	 return(" Same Dates");
+			 }
+		}
+		else if(month>1)
+		{
+			 if(year===1)
+			{
+		 	 return(year+" year "+month+" months");
+			 }
+			 else if(year>1)
+			 {
+			 return(year+" years "+month+" months");
+			 }
+			 else
+			 {
+			 	 return(month+" months");
+			 }
+		}
+	 }
+
+else
+	 {
+	 return(date+" days "+month+" months "+year+" years ");
+	 }
+ }
+function togglesidebar()
+{
+	document.getElementById('menubar').classList.toggle('active');
+}
+</script>
+
+</head>
+<body>
+
+<div id="menubar"  >
+<div class="toggle-btn" onclick="togglesidebar()">
+<span></span>
+<span></span>
+<span></span>
+</div>
+<ul>
+<a href="index.html"><li>Standard</li></a>
+<a href="scientific.html"><li>Scientific</li></a>
+<a href="date.html"><li>Date Calculation</li></a>
+<a href="decip.html"><li>Programmer</li></a>
+</ul>
+</div>
+<div class="dmy">
+<form name="date" align="right">
+<br>
+<p id="txt">Scientific</p>
+<label id="box">From</date><br>
+<input type="date" id="date1"></date>
+<br>
+<br>
+<label id="box">To</label><br>
+<input type="date" id="date2"></date>
+<br>
+<br>
+<input type="button" value="Submit" id="btn" onclick="date.display.value=test()"/></button>
+<br>
+<br>
+<label>Difference</label><br>
+<input type="text" name="display" readonly id="box2"><br>
+</form>
+</div>
+</body>
+</html>

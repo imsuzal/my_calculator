@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+     <title>calculator</title>
+	<link rel="stylesheet" href="css/calc1.css">
+ <script type="text/javascript" >
+ function factorial()
+ {
+ 	 var num=document.getElementById('box').value;
+	 var i,fact=1;
+	 for(i=1;i<=num;i++)
+	 {
+	 	 fact=fact*i;
+	 }
+	 return fact;
+ }
+  function sum()
+ {
+ 	 var val=document.getElementById('box').value;
+	 var i,s=0;
+	 for(i=1;i<=val;i++)
+	 {
+	    s=s+i;
+	 }
+	 return s;
+ }
+function togglesidebar()
+{
+	document.getElementById('menubar').classList.toggle('active');
+}
+
+</script>
+
+</head>
+<body>
+
+<div id="menubar"  >
+<div class="toggle-btn" onclick="togglesidebar()">
+<span></span>
+<span></span>
+<span></span>
+</div>
+<ul>
+<a href="index.html"><li>Standard</li></a>
+<a href="scientific.html"><li>Scientific</li></a>
+<a href="date.html"><li>Date Calculation</li></a>
+<a href="decip.html"><li>Programmer</li></a>
+</ul>
+</div>
+
+<div class="rscientific">
+
+<div class="calculator">
+<center>
+<form name="calculator" align="center">
+<p id="txt">Scientific</p>
+<b>
+<input type="text" name="operation" id="box1" readonly><br>
+<input type="text"  name="display" id="box" placeholder="0" readonly><br>
+
+<input type="button" value="RAD" id="btn2" onclick="location.href='scientific.html'" ><br>
+
+
+<input type="button" value="x²" id="btn1" onclick="calculator.display.value=calculator.display.value*calculator.display.value"><!--
+--><input type="button" value="x^x" id="btn1" onclick="calculator.display.value=calculator.display.value*calculator.display.value"><!--
+--><input type="button" value="sin" id="btn1" onclick="calculator.operation.value='sin('+calculator.display.value+')';calculator.display.value=Math.sin(calculator.display.value) "><!--
+--><input type="button" value="cos" id="btn1" onclick="calculator.operation.value='cos('+calculator.display.value+')';calculator.display.value=Math.cos(calculator.display.value)"><!--
+--><input type="button" value="tan" id="btn1" onclick="calculator.operation.value='tan('+calculator.display.value+')';calculator.display.value=Math.tan(calculator.display.value)"><!--
+--><input type="button" value="CE" id="btn1" onclick="calculator.display.value=' '"></button><!--
+--><input type="button" value="C" id="btn1" onclick="calculator.display.value=' ';calculator.operation.value=''"><!--
+--><input type="button" value="&#8592;" id="btn1" onclick="calculator.display.value=calculator.display.value.substring(0,calculator.display.value.length-1)"><!--
+--><input type="button" value="&#xF7;" id="btn1" onclick="calculator.operation.value+='/';calculator.display.value+='/'"></br>
+
+<input type="button" value="x³" id="btn1" onclick="calculator.display.value=Math.pow(calculator.display.value,3)"><!--
+--><input type="button" value="&#8731;x" id="btn1" onclick="calculator.operation.value='&#8731;'+calculator.display.value;calculator.display.value=Math.pow(calculator.display.value,(1/3))"><!--
+--><input type="button" value="sin^-1" id="btn1" onclick="calculator.operation.value='sin^-1('+calculator.display.value+')';calculator.display.value=Math.asin(calculator.display.value)"><!--
+--><input type="button" value="cos^-1" id="btn1" onclick="calculator.operation.value='cos^-1('+calculator.display.value+')';calculator.display.value=Math.acos(calculator.display.value)"><!--
+--><input type="button" value="tan^-1" id="btn1" onclick="calculator.operation.value='tan^-1('+calculator.display.value+')';calculator.display.value=Math.atan(calculator.display.value)"><!--
+--><input type="button" value="7" id="btn" onclick="calculator.operation.value+='7';calculator.display.value+='7'"><!--
+--><input type="button" value="8" id="btn" onclick="calculator.operation.value+='8';calculator.display.value+='8'"><!--
+--><input type="button" value="9" id="btn" onclick="calculator.operation.value+='9';calculator.display.value+='9'"><!--
+--><input type="button" value="&#215;" id="btn1" onclick="calculator.operation.value+='*';calculator.display.value+='*'"></br>
+
+
+<input type="button" value="&#8730;" id="btn1" onclick="calculator.operation.value='&#8730;'+calculator.display.value; calculator.display.value=Math.pow(calculator.display.value,0.5)"><!--
+--><input type="button" value="10^x" id="btn1" onclick="calculator.operation.value='10^'+calculator.display.value;calculator.display.value=Math.pow(10,calculator.display.value)"><!--
+--><input type="button" value="log" id="btn1" onclick="calculator.operation.value='log('+calculator.display.value+')';calculator.display.value=Math.log10(calculator.display.value)"><!--
+--><input type="button" value="Exp" id="btn1" onclick="calculator.operation.value+='e';calculator.display.value+=Math.E"><!--
+--><input type="button" value="%" id="btn1" onclick="calculator.operation.value+='%';calculator.display.value+='%'"><!--
+--><input type="button" value="4" id="btn" onclick="calculator.operation.value+='4';calculator.display.value+='4'"><!--
+--><input type="button" value="5" id="btn" onclick="calculator.operation.value+='5';calculator.display.value+='5'"><!--
+--><input type="button" value="6" id="btn" onclick="calculator.operation.value+='6';calculator.display.value+='6'"><!--
+--><input type="button" value="&#8722;" id="btn1" onclick="calculator.operation.value+='-';calculator.display.value+='-'"></br>
+
+
+<input type="button" value="&#8543;x" id="btn1" onclick="calculator.operation.value='1/'+calculator.display.value;calculator.display.value=1/calculator.display.value"><!--
+--><input type="button" value="e^x" id="btn1" onclick="calculator.operation.value='e^'+calculator.display.value;calculator.display.value=Math.pow(Math.E,calculator.display.value)"><!--
+--><input type="button" value="ln" id="btn1" onclick="calculator.operation.value='ln('+calculator.display.value+')';calculator.display.value=Math.pow(calculator.display.value,0.5)"><!--
+--><input type="button" value="2^x" id="btn1" onclick="calculator.operation.value='2^'+calculator.display.value;calculator.display.value=Math.pow(2,calculator.display.value)"><!--
+--><input type="button" value="Σx" id="btn1" onclick="calculator.operation.value='Σ'+calculator.display.value;calculator.display.value=sum()"><!--
+--><input type="button" value="1" id="btn" onclick="calculator.operation.value+='1';calculator.display.value+='1'"><!--
+--><input type="button" value="2" id="btn" onclick="calculator.operation.value+='2';calculator.display.value+='2'"><!--
+--><input type="button" value="3" id="btn" onclick="calculator.operation.value+='3';calculator.display.value+='3'"><!--
+--><input type="button" value="&#43;" id="btn1" onclick="calculator.operation.value+='+';calculator.display.value+='+'"></br>
+
+
+<input type="button" value="abs" id="btn1" onclick="calculator.operation.value+='abs('+calculator.display.value+')';calculator.display.value=Math.abs(calculator.display.value)"><!--
+--><input type="button" value="π" id="btn1" onclick=" calculator.operation.value+='π';calculator.display.value+=Math.PI"><!--
+--><input type="button" value="n!" id="btn1" onclick="calculator.operation.value='fact('+calculator.display.value+')';calculator.display.value=factorial(calculator.display.value)"><!--
+--><input type="button" value="(" id="btn1" onclick=" calculator.operation.value+='(';calculator.display.value+='('"><!--
+--><input type="button" value=")" id="btn1" onclick=" calculator.operation.value+=')';calculator.display.value+=')'"><!--
+--><input type="button" value="&#177;" id="btn1" onclick=" calculator.operation.value*=-1;calculator.display.value*=-1"><!--
+--><input type="button" value="0" id="btn" onclick=" calculator.operation.value+='0';calculator.display.value+='0'"><!--
+--><input type="button" value="." id="btn1" onclick=" calculator.operation.value+='.';calculator.display.value+='.'"><!--
+--><input type="button" value="=" id="btn1" onclick="calculator.display.value=eval(calculator.display.value)"></br>
+</div>
+</center>
+</form>
+
+
+</body>
+</html>

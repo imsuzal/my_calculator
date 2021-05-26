@@ -1,0 +1,176 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+     <title>calculator</title>
+	<link rel="stylesheet" href="css/calc2.css">
+ <script type="text/javascript" >
+ function sum()
+ {
+ 	 var val=document.getElementById('box').value;
+	 var i,s=0;
+	 for(i=1;i<=val;i++)
+	 {
+	    s=s+i;
+	 }
+	 return s;
+ }
+ function factorial()
+ {
+ 	 var num=document.getElementById('box').value;
+	 var i,fact=1;
+	 for(i=1;i<=num;i++)
+	 {
+	 	 fact=fact*i;
+	 }
+	 return fact;
+ }
+ function hexa1()
+ {
+ 	 var number=document.getElementById('box').value;
+	number= parseInt(number,8).toString(16);
+	return number.toUpperCase();
+ }
+ function bin1()
+ {
+  	 var number=document.getElementById('box').value;
+	number= parseInt(number,8).toString(2);
+	return number;
+ }
+ function deci1()
+ {
+ 	 var number=document.getElementById('box').value;
+	number= parseInt(number,8).toString(10);
+	return number;
+ }
+  function evaluate1()
+ {
+
+   var str=document.getElementById('box').value;
+
+   if(str.includes("+"))
+   {
+        var a1=new Array(str.split("+")[0],str.split("+")[1]);
+		var sum=parseInt(parseInt(a1[0],8).toString(10))+parseInt(parseInt(a1[1],8).toString(10));
+		var res= (parseInt(sum,10).toString(8));
+   }
+
+   else if(str.includes('-'))
+   {
+        a1=str.split("-");
+		var sub=parseInt(parseInt(a1[0],8).toString(10))-parseInt(parseInt(a1[1],8).toString(10));
+		var res= (parseInt(sub,10).toString(8));
+   }
+   else if(str.includes('*'))
+   {
+        a1=str.split("*");
+		var mul=parseInt(parseInt(a1[0],8).toString(10))*parseInt(parseInt(a1[1],8).toString(10));
+		var res= (parseInt(mul,10).toString(8));
+   }
+     else if(str.includes('/'))
+   {
+        a1=str.split("/");
+		var divi=parseInt(parseInt(a1[0],8).toString(10))/parseInt(parseInt(a1[1],8).toString(10));
+		var res= (parseInt(divi,10).toString(8));
+   }
+    else if(str.includes('%'))
+   {
+        a1=str.split("%");
+		var divi=parseInt(parseInt(a1[0],8).toString(10))%parseInt(parseInt(a1[1],8).toString(10));
+		var res= (parseInt(divi,10).toString(8));
+   }
+   else{
+   	   var res= str;
+   }
+   return res;
+
+ }
+function togglesidebar()
+{
+	document.getElementById('menubar').classList.toggle('active');
+}
+
+</script>
+
+</head>
+<body>
+
+<div id="menubar"  >
+<div class="toggle-btn" onclick="togglesidebar()">
+<span></span>
+<span></span>
+<span></span>
+</div>
+<ul>
+<a href="index.html"><li>Standard</li></a>
+<a href="scientific.html"><li>Scientific</li></a>
+<a href="date.html"><li>Date Calculation</li></a>
+<a href="decip.html"><li>Programmer</li></a>
+</ul>
+</div>
+
+<div class="programmer">
+
+<div class="calculator">
+<center>
+<form name="calculator" align="left">
+<p id="txt">Programmer</p>
+<b>
+<label style="color:white; font-size:15px;">Octal Mode</label>
+<input type="text" name="operation" id="box2" placeholder="0" readonly><br>
+<input type="text" name="display" id="box" placeholder="0" readonly><br>
+<input type="button" value="HEX" id="btn3" onclick="location.href='hexp.html'">
+<input type="text"  name="hexa" id="box3" placeholder="0" readonly><br>
+<input type="button" value="DEC" id="btn3" onclick="location.href='decip.html'">
+<input type="text" name="deci" id="box3" placeholder="0" readonly><br>
+<input type="button" value="OCT" id="btn3" onclick="location.href='octp.html'">
+<input type="text" name="octa" id="box3" placeholder="0" readonly><br>
+<input type="button" value="BIN" id="btn3" onclick="location.href='binp.html'">
+<input type="text" name="bin" id="box3" placeholder="0" readonly><br>
+
+
+<input type="button" value="NOT" id="btn1" onclick="calculator.display.value=-1*(calculator.display.value+1)"><!--
+--><input type="button" value="MOD" id="btn1" onclick="calculator.display.value+='%';calculator.operation.value+='%'"><!--
+--><input type="button" value="CE" id="btn1" onclick="calculator.display.value=' '"><!--
+--><input type="button" value="CLR" id="btn1" onclick="calculator.display.value=' ';calculator.operation.value=' ';calculator.hexa.value=' ';calculator.deci.value=' ';calculator.octa.value=' ';calculator.bin.value=' '"><!--
+--><input type="button" value="&#8592;" id="btn1" onclick="calculator.display.value=calculator.display.value.substring(0,calculator.display.value.length-1)"><!--
+--><input type="button" value="&#xF7;" id="btn1" onclick="calculator.operation.value+='/';calculator.display.value=' ';calculator.display.value+='/'"></br>
+
+<input type="button" value="A" id="btn4" disabled  onclick="calculator.operation.value+='A';calculator.display.value+='A'"><!--
+--><input type="button" value="B" id="btn4" disabled onclick="calculator.operation.value+='B';calculator.display.value+='B'"><!--
+--><input type="button" value="7" id="btn" onclick="calculator.operation.value+='7';calculator.display.value+='7'"><!--
+--><input type="button" value="8" id="btn4" disabled onclick="calculator.operation.value+='8';calculator.display.value+='8'"><!--
+--><input type="button" value="9" id="btn4" disabled onclick="calculator.operation.value+='9';calculator.display.value+='9'"><!--
+--><input type="button" value="&#215;" id="btn1" onclick="calculator.operation.value+='*';calculator.display.value+='*'"></br>
+
+
+<input type="button" value="C" id="btn4" disabled onclick="calculator.operation.value+='C';calculator.display.value+='C'"><!--
+--><input type="button" value="D" id="btn4" disabled onclick="calculator.operation.value+='D';calculator.display.value+='D'"><!--
+--><input type="button" value="4" id="btn" onclick="calculator.operation.value+='4';calculator.display.value+='4'"><!--
+--><input type="button" value="5" id="btn" onclick="calculator.operation.value+='5';calculator.display.value+='5'"><!--
+--><input type="button" value="6" id="btn" onclick="calculator.operation.value+='6';calculator.display.value+='6'"><!--
+--><input type="button" value="&#8722;" id="btn1" onclick="calculator.operation.value+='-';calculator.display.value+='-'"></br>
+
+
+<input type="button" value="E" disabled id="btn4" onclick="calculator.operation.value+='E';calculator.display.value+='E'"><!--
+--><input type="button" value="F" disabled id="btn4" onclick="calculator.operation.value+='F';calculator.display.value+='F'"><!--
+--><input type="button" value="1" id="btn" onclick="calculator.operation.value+='1';calculator.display.value+='1'"><!--
+--><input type="button" value="2" id="btn" onclick="calculator.operation.value+='2';calculator.display.value+='2'"><!--
+--><input type="button" value="3" id="btn" onclick="calculator.operation.value+='3';calculator.display.value+='3'"><!--
+--><input type="button" value="&#43;" id="btn1" onclick="calculator.operation.value+='+';calculator.display.value+='+'"></br>
+
+
+<input type="button" value="(" id="btn1" onclick=" calculator.operation.value+='(';calculator.display.value+='('"><!--
+--><input type="button" value=")" id="btn1" onclick=" calculator.operation.value+=')';calculator.display.value+=')'"><!--
+--><input type="button" value="&#177;" id="btn1" onclick=" calculator.operation.value*=-1;calculator.display.value*=-1"><!--
+--><input type="button" value="0" id="btn" onclick=" calculator.operation.value+='0';calculator.display.value+='0'"><!--
+--><input type="button" value="." id="btn1" onclick=" calculator.operation.value+='.';calculator.display.value+='.'"><!--
+
+--><input type="button" value="=" id="btn1" onclick="calculator.display.value=evaluate1();calculator.hexa.value=hexa1();calculator.deci.value=deci1();calculator.octa.value=calculator.display.value;calculator.bin.value=bin1()"></br>
+</div>
+</center>
+</form>
+
+
+</body>
+</html>

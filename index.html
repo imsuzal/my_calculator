@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+     <title>calculator</title>
+	<link rel="stylesheet" href="css/calc.css">
+ <script type="text/javascript" >
+function togglesidebar()
+{
+	document.getElementById('menubar').classList.toggle('active');
+}
+</script>
+
+</head>
+<body>
+
+<div id="menubar"  >
+<div class="toggle-btn" onclick="togglesidebar()">
+<span></span>
+<span></span>
+<span></span>
+</div>
+<ul>
+<a href="index.html"><li>Standard</li></a>
+<a href="scientific.html"><li>Scientific</li></a>
+<a href="date.html"><li>Date Calculation</li></a>
+<a href="decip.html"><li>Programmer</li></a>
+</ul>
+</div>
+
+<div class="standard">
+
+<div class="calculator">
+<center>
+<form name="calculator" align="center">
+<p id="txt">Standard</p>
+<b>
+<input type="text" name="operation" id="box1"placeholder="0" readonly><br>
+<input type="text"  name="display" id="box" placeholder="0" readonly><br>
+
+
+<input type="button" value="&#37;" id="btn1" onclick="calculator.operation.value+='%';calculator.display.value+='%'"></button><!--
+--><input type="button" value="CE" id="btn1" onclick="calculator.operation.value=' ';calculator.display.value=' '"></button><!--
+ --><input type="button" value="C" id="btn1" onclick="calculator.operation.value=' ';calculator.display.value=' '"></button><!--
+ --><input type="button" value="&#8592;" id="btn1" onclick="calculator.display.value=calculator.display.value.substring(0,calculator.display.value.length-1)"></button><!--
+ --><input type="button" value="&#xF7;" id="btn1" onclick="calculator.operation.value+='/';calculator.display.value+='/'"></button></br>
+
+
+
+<input type="button" value="&#8730;" id="btn1" onclick="calculator.operation.value='&#8730;'+calculator.display.value;calculator.display.value=Math.pow(calculator.display.value,0.5)"></button><!--
+    --><input type="button" value="7" id="btn" onclick="calculator.operation.value+='7';calculator.display.value+='7'"></button><!--
+    --><input type="button" value="8" id="btn" onclick="calculator.operation.value+='8';calculator.display.value+='8'"></button><!--
+    --><input type="button" value="9" id="btn" onclick="calculator.operation.value+='9';calculator.display.value+='9'"></button><!--
+    --><input type="button" value="&#215;" id="btn1" onclick="calculator.operation.value+='*';calculator.display.value+='*'"></button></br>
+
+<input type="button" value="x²" id="btn1" onclick="calculator.operation.value=calculator.display.value+'^2';calculator.display.value=calculator.display.value*calculator.display.value"></button><!--
+    --><input type="button" value="4" id="btn" onclick="calculator.operation.value+='4';calculator.display.value+='4'"></button><!--
+    --><input type="button" value="5" id="btn" onclick="calculator.operation.value+='5';calculator.display.value+='5'"></button><!--
+    --><input type="button" value="6" id="btn" onclick="calculator.operation.value+='6';calculator.display.value+='6'"></button><!--
+    --><input type="button" value="&#8722;" id="btn1" onclick="calculator.operation.value+='-';calculator.display.value+='-'"></button></br>
+
+<input type="button" value="x³" id="btn1" onclick="calculator.operation.value=calculator.display.value+'^3';calculator.display.value=Math.pow(calculator.display.value,3)"></button><!--
+    --><input type="button" value="1" id="btn" onclick="calculator.operation.value+='1';calculator.display.value+='1'"></button><!--
+    --><input type="button" value="2" id="btn" onclick="calculator.operation.value+='2';calculator.display.value+='2'"></button><!--
+    --><input type="button" value="3" id="btn" onclick="calculator.operation.value+='3';calculator.display.value+='3'"></button><!--
+    --><input type="button" value="&#43;" id="btn1" onclick="calculator.operation.value+='+';calculator.display.value+='+'"></button></br>
+
+<input type="button" value="&#8543;x" id="btn1" onclick="calculator.operation.value='1/'calculator.display.value;calculator.display.value=1/calculator.display.value"></button><!--
+    --><input type="button" value="&#177;" id="btn1" onclick="calculator.operation.value*=-1;calculator.display.value*=-1"></button><!--
+    --><input type="button" value="0" id="btn" onclick="calculator.operation.value+='0';calculator.display.value+='0'"></button><!--
+    --><input type="button" value="." id="btn1" onclick="calculator.operation.value+='.';calculator.display.value+='.'"></button><!--
+    --><input type="button" value="=" id="btn1" onclick="calculator.display.value=eval(calculator.display.value)"></button></br>
+</div>
+</center>
+</form>
+
+
+</body>
+</html>
