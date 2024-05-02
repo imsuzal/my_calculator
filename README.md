@@ -5,15 +5,23 @@ live link- https://imsuzal.github.io/my_calculator/scientific.html
 
 **Scientific Calculator**
 Description:
+
 The scientific calculator is equipped with advanced mathematical functions beyond basic arithmetic operations. It allows users to perform trigonometric, logarithmic, exponential, and other scientific calculations.
 
 Features
+
 Trigonometric functions (sine, cosine, tangent)
+
 Logarithmic functions (logarithm, natural logarithm)
+
 Exponential functions (exponentiation, square root)
+
 Parentheses support for complex expressions
+
 Constants such as π (pi) and e (Euler's number)
+
 Memory functions (store, recall, clear)
+
 
 ---
 **Date Calculator**
