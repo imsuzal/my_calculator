@@ -4,28 +4,25 @@ live link- https://imsuzal.github.io/my_calculator/scientific.html
 
 
 **Scientific Calculator**
+
 Description:
 
 The scientific calculator is equipped with advanced mathematical functions beyond basic arithmetic operations. It allows users to perform trigonometric, logarithmic, exponential, and other scientific calculations.
 
-Features
-
+Features:
 Trigonometric functions (sine, cosine, tangent)
-
 Logarithmic functions (logarithm, natural logarithm)
-
 Exponential functions (exponentiation, square root)
-
 Parentheses support for complex expressions
-
 Constants such as π (pi) and e (Euler's number)
-
 Memory functions (store, recall, clear)
 
 
 ---
 **Date Calculator**
+
 Description:
+
 The date calculator mode provides functionalities to perform operations related to dates and time. Users can calculate the difference between two dates, add or subtract days, and find the day of the week for a given date.
 
 Features
@@ -37,7 +34,9 @@ Support for different date formats (MM/DD/YYYY, DD/MM/YYYY)
 
 ---
 **Standard Mode**
+
 Description:
+
 The standard mode offers basic arithmetic operations such as addition, subtraction, multiplication, and division. It provides a user-friendly interface for performing simple calculations.
 
 Features
@@ -50,7 +49,9 @@ Clear and delete functionality
 ---
 
 **Programmer Mode**
+
 Description:
+
 The programmer mode is designed for performing calculations commonly used in computer programming and digital electronics. It supports binary, octal, decimal, and hexadecimal number systems.
 
 Features
